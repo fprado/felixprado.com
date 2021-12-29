@@ -1,1218 +1,1415 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Félix Prado</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <style>
-      .clear-margin {
-  margin: 0;
-}
-.space-top {
-  margin-top: 10px;
-}
-.space-right {
-  margin-right: 10px;
-}
-.icon-left {
-  margin-right: 5px;
-}
-.icon-right {
-  margin-left: 5px;
-}
-.labels {
-  word-spacing: 5px;
-  line-height: 2;
-}
-.label-keyword {
-  display: inline-block;
-  background: #7eb0db;
-  color: white;
-  font-size: 0.9em;
-  padding: 5px;
-  border: 1px solid #357ebd;
-}
-.link-disguise {
-  color: inherit;
-}
-.link-disguise:hover {
-  color: inherit;
-}
-@media (max-width: 992px) {
-  .clear-margin-sm {
-    margin-bottom: 0;
-  }
-}
-body {
-  font-family: 'Lato';
-  background: #ffffff;
-  color: #333333;
-}
-.main {
-  padding: 5px;
-}
-.card {
-  background: #ffffff;
-  border: 1px solid #ffffff;
-  border-radius: 3px;
-  min-height: 300px;
-  padding: 10px;
-}
-.card-nested {
-  min-height: 0;
-  margin-bottom: 10px;
-  border-width: 1px 0 0 0;
-}
-.card-nested:before,
-.card-nested:after {
-  content: " ";
-  display: table;
-}
-.card-nested:after {
-  clear: both;
-}
-@media (max-width: 480px) {
-  .card-nested {
-    padding: 5px 0;
-  }
-}
-.background-card {
-  padding: 10px 20px;
-}
-.card-wrapper {
-  padding: 5px;
-}
-@media (max-width: 992px) {
-  .card-wrapper {
-    float: none !important;
-  }
-}
-.text-bolder {
-  font-weight: bold;
-}
-.background-details .detail {
-  display: table;
-  padding: 10px 0;
-}
-.background-details .detail .icon {
-  min-width: 45px;
-  max-width: 45px;
-  text-align: center;
-}
-.background-details .detail .info {
-  width: 100%;
-}
-.background-details .detail .title,
-.background-details .detail .icon {
-  color: #707070;
-}
-.background-details .detail .mobile-title {
-  display: none;
-}
-@media (max-width: 480px) {
-  .background-details .detail .mobile-title {
-    display: inline-block;
-    margin-left: 5px;
-    font-weight: bold;
-    text-transform: uppercase;
-    vertical-align: middle;
-  }
-}
-.background-details .detail .icon,
-.background-details .detail .info {
-  display: table-cell;
-  padding: 0 10px;
-}
-@media (max-width: 480px) {
-  .background-details .detail {
-    display: block;
-  }
-  .background-details .detail .icon {
-    max-width: inherit;
-    min-width: inherit;
-    text-align: left;
-  }
-  .background-details .detail .icon,
-  .background-details .detail .info {
-    display: block;
-    padding: 10px 0;
-  }
-  .background-details .detail .title {
-    display: none;
-  }
-}
-.info .content.has-sidebar {
-  width: 80%;
-  box-sizing: border-box;
-  float: left;
-  padding: 0 10px;
-  border-right: 1px solid #cdcdcd;
-}
-@media (max-width: 992px) {
-  .info .content.has-sidebar {
-    width: 100%;
-    border-right: 0;
-  }
-}
-@media (max-width: 480px) {
-  .info .content.has-sidebar {
-    padding: 0 2px;
-  }
-}
-.info .sidebar {
-  margin-left: 80%;
-  box-sizing: border-box;
-  padding: 10px;
-}
-@media (max-width: 480px) {
-  ul {
-    padding-left: 25px;
-  }
-}
-/*
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Félix Prado</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <style>
+    .clear-margin {
+      margin: 0;
+    }
+
+    .space-top {
+      margin-top: 10px;
+    }
+
+    .space-right {
+      margin-right: 10px;
+    }
+
+    .icon-left {
+      margin-right: 5px;
+    }
+
+    .icon-right {
+      margin-left: 5px;
+    }
+
+    .labels {
+      word-spacing: 5px;
+      line-height: 2;
+    }
+
+    .label-keyword {
+      display: inline-block;
+      background: #7eb0db;
+      color: white;
+      font-size: 0.9em;
+      padding: 5px;
+      border: 1px solid #357ebd;
+    }
+
+    .link-disguise {
+      color: inherit;
+    }
+
+    .link-disguise:hover {
+      color: inherit;
+    }
+
+    @media (max-width: 992px) {
+      .clear-margin-sm {
+        margin-bottom: 0;
+      }
+    }
+
+    body {
+      font-family: 'Lato';
+      background: #ffffff;
+      color: #333333;
+    }
+
+    .main {
+      padding: 5px;
+    }
+
+    .card {
+      background: #ffffff;
+      border: 1px solid #ffffff;
+      border-radius: 3px;
+      min-height: 300px;
+      padding: 10px;
+    }
+
+    .card-nested {
+      min-height: 0;
+      margin-bottom: 10px;
+      border-width: 1px 0 0 0;
+    }
+
+    .card-nested:before,
+    .card-nested:after {
+      content: " ";
+      display: table;
+    }
+
+    .card-nested:after {
+      clear: both;
+    }
+
+    @media (max-width: 480px) {
+      .card-nested {
+        padding: 5px 0;
+      }
+    }
+
+    .background-card {
+      padding: 10px 20px;
+    }
+
+    .card-wrapper {
+      padding: 5px;
+    }
+
+    @media (max-width: 992px) {
+      .card-wrapper {
+        float: none !important;
+      }
+    }
+
+    .text-bolder {
+      font-weight: bold;
+    }
+
+    .background-details .detail {
+      display: table;
+      padding: 10px 0;
+    }
+
+    .background-details .detail .icon {
+      min-width: 45px;
+      max-width: 45px;
+      text-align: center;
+    }
+
+    .background-details .detail .info {
+      width: 100%;
+    }
+
+    .background-details .detail .title,
+    .background-details .detail .icon {
+      color: #707070;
+    }
+
+    .background-details .detail .mobile-title {
+      display: none;
+    }
+
+    @media (max-width: 480px) {
+      .background-details .detail .mobile-title {
+        display: inline-block;
+        margin-left: 5px;
+        font-weight: bold;
+        text-transform: uppercase;
+        vertical-align: middle;
+      }
+    }
+
+    .background-details .detail .icon,
+    .background-details .detail .info {
+      display: table-cell;
+      padding: 0 10px;
+    }
+
+    @media (max-width: 480px) {
+      .background-details .detail {
+        display: block;
+      }
+
+      .background-details .detail .icon {
+        max-width: inherit;
+        min-width: inherit;
+        text-align: left;
+      }
+
+      .background-details .detail .icon,
+      .background-details .detail .info {
+        display: block;
+        padding: 10px 0;
+      }
+
+      .background-details .detail .title {
+        display: none;
+      }
+    }
+
+    .info .content.has-sidebar {
+      width: 80%;
+      box-sizing: border-box;
+      float: left;
+      padding: 0 10px;
+      border-right: 1px solid #cdcdcd;
+    }
+
+    @media (max-width: 992px) {
+      .info .content.has-sidebar {
+        width: 100%;
+        border-right: 0;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .info .content.has-sidebar {
+        padding: 0 2px;
+      }
+    }
+
+    .info .sidebar {
+      margin-left: 80%;
+      box-sizing: border-box;
+      padding: 10px;
+    }
+
+    @media (max-width: 480px) {
+      ul {
+        padding-left: 25px;
+      }
+    }
+
+    /*
     Credits: http://codyhouse.co/demo/smart-fixed-navigation/index.html
 */
-.floating-nav-trigger {
-  width: 50px;
-  height: 50px;
-  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.24);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.24);
-  -webkit-transition: background-color 0.5s ease;
-  -o-transition: background-color 0.5s ease;
-  transition: background-color 0.5s ease;
-  display: block;
-  border-radius: 50%;
-  text-align: center;
-  padding-top: 10px;
-  background-color: white;
-  font-size: 1.5em;
-  color: #357ebd;
-  z-index: 100;
-  position: fixed;
-  bottom: 10px;
-  right: 10px;
-}
-.floating-nav-trigger .close-icon {
-  display: none;
-}
-.floating-nav-trigger:hover {
-  color: #1f496e;
-  background-color: #e6e6e6;
-  text-decoration: none;
-}
-.floating-nav-trigger.is-open {
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-.floating-nav-trigger.is-open .close-icon {
-  display: inherit;
-}
-.floating-nav-trigger.is-open .fa-bars {
-  display: none;
-}
-.floating-nav-trigger.is-open:hover {
-  background-color: white;
-}
-.floating-nav {
-  -webkit-transform: scale(0);
-  -ms-transform: scale(0);
-  -o-transform: scale(0);
-  transform: scale(0);
-  -webkit-transform-origin: 100% 100%;
-  -moz-transform-origin: 100% 100%;
-  -ms-transform-origin: 100% 100%;
-  transform-origin: 100% 100%;
-  -webkit-transition: transform 0.3s, visibility 0s 0.3s;
-  -o-transition: transform 0.3s, visibility 0s 0.3s;
-  transition: transform 0.3s, visibility 0s 0.3s;
-  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.24);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.24);
-  position: fixed;
-  z-index: 50;
-  right: 10px;
-  bottom: 10px;
-  background-color: white;
-  width: 90%;
-  max-width: 400px;
-  visibility: hidden;
-  overflow: hidden;
-}
-.floating-nav ul {
-  font-size: 1.2em;
-  margin: 0;
-}
-.floating-nav ul li {
-  border-bottom: 1px solid #eff2f6;
-}
-.floating-nav ul li a {
-  padding: 20px;
-  text-decoration: none;
-  color: #357ebd;
-  display: block;
-}
-.floating-nav ul li a:hover {
-  color: #1f496e;
-}
-.floating-nav ul li i.fa {
-  margin-right: 10px;
-}
-.floating-nav ul li:last-child {
-  border-bottom: 0;
-}
-.floating-nav.is-visible {
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  -o-transform: scale(1);
-  transform: scale(1);
-  -webkit-transition: transform 0.3s, visibility 0s 0s;
-  -o-transition: transform 0.3s, visibility 0s 0s;
-  transition: transform 0.3s, visibility 0s 0s;
-  visibility: visible;
-}
-@media (max-width: 992px) {
-  .profile-card-wrapper {
-    position: relative;
-  }
-}
-.profile-pic {
-  padding: 20px 0;
-}
-@media (max-width: 992px) {
-  .profile-pic {
-    padding: 10px 0;
-  }
-}
-.profile-pic img {
-  width: 100px;
-  height: 100px;
-}
-@media (max-width: 992px) {
-  .name {
-    margin-top: 10px;
-  }
-}
-@media (max-width: 768px) {
-  .contact-details {
-    text-align: center;
-  }
-}
-.contact-details .detail {
-  display: table;
-  padding: 10px 0;
-}
-.contact-details .detail .icon {
-  padding: 0 10px;
-  color: #707070;
-}
-@media (max-width: 992px) {
-  .contact-details .detail .icon {
-    padding: 0 5px 0 0;
-  }
-}
-.contact-details .detail .info {
-  font-size: 0.8em;
-}
-.contact-details .detail .icon,
-.contact-details .detail .info {
-  display: table-cell;
-  vertical-align: middle;
-}
-@media (max-width: 768px) {
-  .contact-details .detail {
-    position: relative;
-    float: left;
-    width: 100%;
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-}
-@media (max-width: 992px) {
-  .contact-details .detail {
-    position: relative;
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding: 10px;
-  }
-  .contact-details .detail .icon,
-  .contact-details .detail .info {
-    display: inline-block;
-  }
-}
-@media (max-width: 992px) and (min-width: 768px) {
-  .contact-details .detail {
-    float: left;
-    width: 25%;
-  }
-}
-.social-links {
-  line-height: 2.5;
-}
-.social-link {
-  margin-left: 5px;
-  min-width: 35px;
-  display: inline-block;
-}
-.social-link:first-child {
-  margin-left: 0;
-}
-.social-link:hover {
-  text-decoration: none;
-}
-.link-github {
-  color: #454545;
-}
-.link-github:hover,
-.link-github:focus {
-  text-decoration: none;
-  color: #2b2b2b;
-}
-.link-twitter {
-  color: #33ccff;
-}
-.link-twitter:hover,
-.link-twitter:focus {
-  text-decoration: none;
-  color: #00bfff;
-}
-.link-blog {
-  color: #f36f24;
-}
-.link-blog:hover,
-.link-blog:focus {
-  text-decoration: none;
-  color: #d8560c;
-}
-.link-linkedin {
-  color: #007bb6;
-}
-.link-linkedin:hover,
-.link-linkedin:focus {
-  text-decoration: none;
-  color: #005983;
-}
-.link-skype {
-  color: #12a5f4;
-}
-.link-skype:hover,
-.link-skype:focus {
-  text-decoration: none;
-  color: #0986ca;
-}
-.link-stackoverflow {
-  color: #8e8e92;
-}
-.link-stackoverflow:hover,
-.link-stackoverflow:focus {
-  text-decoration: none;
-  color: #747479;
-}
-.link-soundcloud {
-  color: #e8822d;
-}
-.link-soundcloud:hover,
-.link-soundcloud:focus {
-  text-decoration: none;
-  color: #cc6916;
-}
-.link-pinterest {
-  color: #bd091f;
-}
-.link-pinterest:hover,
-.link-pinterest:focus {
-  text-decoration: none;
-  color: #8c0717;
-}
-.link-vimeo {
-  color: #17b3e8;
-}
-.link-vimeo:hover,
-.link-vimeo:focus {
-  text-decoration: none;
-  color: #128fba;
-}
-.link-behance {
-  color: #2c98cf;
-}
-.link-behance:hover,
-.link-behance:focus {
-  text-decoration: none;
-  color: #2379a5;
-}
-.link-codepen {
-  color: #1c1c1c;
-}
-.link-codepen:hover,
-.link-codepen:focus {
-  text-decoration: none;
-  color: #020202;
-}
-.link-foursquare {
-  color: #fa4778;
-}
-.link-foursquare:hover,
-.link-foursquare:focus {
-  text-decoration: none;
-  color: #f91554;
-}
-.link-reddit {
-  color: #545454;
-}
-.link-reddit:hover,
-.link-reddit:focus {
-  text-decoration: none;
-  color: #3b3b3b;
-}
-.link-spotify {
-  color: #acd200;
-}
-.link-spotify:hover,
-.link-spotify:focus {
-  text-decoration: none;
-  color: #829f00;
-}
-.link-dribbble {
-  color: #ce366f;
-}
-.link-dribbble:hover,
-.link-dribbble:focus {
-  text-decoration: none;
-  color: #a82959;
-}
-.link-facebook {
-  color: #4b6daa;
-}
-.link-facebook:hover,
-.link-facebook:focus {
-  text-decoration: none;
-  color: #3b5687;
-}
-.link-angellist {
-  color: #000000;
-}
-.link-angellist:hover,
-.link-angellist:focus {
-  text-decoration: none;
-  color: #000000;
-}
-.link-bitbucket {
-  color: #205081;
-}
-.link-bitbucket:hover,
-.link-bitbucket:focus {
-  text-decoration: none;
-  color: #163758;
-}
-.card-skills {
-  position: relative;
-}
-.skill-level {
-  border-radius: 3px;
-  position: absolute;
-  top: 10px;
-  bottom: 10px;
-  left: 0;
-  width: 10px;
-  box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.2);
-}
-.skill-level .skill-progress {
-  position: absolute;
-  border-radius: 3px;
-  bottom: 0;
-  width: 100%;
-  -webkit-transition: height 1s ease;
-}
-.skill-level .skill-progress.beginner {
-  height: 50%;
-  background: #e74c3c;
-}
-.skill-level .skill-progress.intermediate {
-  height: 70%;
-  background: #f1c40f;
-}
-.skill-level .skill-progress.advanced {
-  height: 80%;
-  background: #428bca;
-}
-.skill-level .skill-progress.master {
-  height: 95%;
-  background: #5cb85c;
-}
-.skill-info {
-  margin-left: 10px;
-}
-@media (max-width: 480px) {
-  .skill-info {
-    margin-left: 20px;
-  }
-}
-@media (max-width: 768px) {
-  .quote {
-    font-size: inherit;
-  }
-}
-@media print {
-  a[href]:after {
-    content: none !important;
-  }
-  .profile-card {
-    text-align: center;
-  }
-  .profile-pic {
-    display: inline-block;
-    vertical-align: middle;
-  }
-  .profile-pic img {
-    border-radius: 0;
-  }
-  .name-and-profession {
-    display: inline-block;
-    vertical-align: middle;
-    margin-left: 15px;
-  }
-  .contact-details .detail {
-    position: relative;
-    float: left;
-    width: 25%;
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding: 0;
-  }
-  .floating-nav,
-  .floating-nav-trigger {
-    display: none;
-  }
-  .pagebreak {
-    page-break-before: always;
-  }
-}
+    .floating-nav-trigger {
+      width: 50px;
+      height: 50px;
+      -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.24);
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.24);
+      -webkit-transition: background-color 0.5s ease;
+      -o-transition: background-color 0.5s ease;
+      transition: background-color 0.5s ease;
+      display: block;
+      border-radius: 50%;
+      text-align: center;
+      padding-top: 10px;
+      background-color: white;
+      font-size: 1.5em;
+      color: #357ebd;
+      z-index: 100;
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+    }
 
-    </style>
-  </head>
+    .floating-nav-trigger .close-icon {
+      display: none;
+    }
 
-  <body itemscope itemtype="http://schema.org/Person">
-    <script>
-      window.onload = function () {
-        var toggleFloatingMenu = function() {
-          $( '.js-floating-nav' ).toggleClass( 'is-visible' );
-          $( '.js-floating-nav-trigger' ).toggleClass( 'is-open' );
-        };
+    .floating-nav-trigger:hover {
+      color: #1f496e;
+      background-color: #e6e6e6;
+      text-decoration: none;
+    }
 
-        $( ".background-card" ).css( "min-height", window.screen.availHeight + "px" );
-        $( ".js-tooltip" ).tooltip();
-        $( '.js-floating-nav-trigger' ).on( 'click', function(e) {
-          e.preventDefault();
-          toggleFloatingMenu();
-        });
-        $( '.js-floating-nav a' ).on( 'click', toggleFloatingMenu );
+    .floating-nav-trigger.is-open {
+      -webkit-box-shadow: none;
+      box-shadow: none;
+    }
+
+    .floating-nav-trigger.is-open .close-icon {
+      display: inherit;
+    }
+
+    .floating-nav-trigger.is-open .fa-bars {
+      display: none;
+    }
+
+    .floating-nav-trigger.is-open:hover {
+      background-color: white;
+    }
+
+    .floating-nav {
+      -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+      -o-transform: scale(0);
+      transform: scale(0);
+      -webkit-transform-origin: 100% 100%;
+      -moz-transform-origin: 100% 100%;
+      -ms-transform-origin: 100% 100%;
+      transform-origin: 100% 100%;
+      -webkit-transition: transform 0.3s, visibility 0s 0.3s;
+      -o-transition: transform 0.3s, visibility 0s 0.3s;
+      transition: transform 0.3s, visibility 0s 0.3s;
+      -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.24);
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.24);
+      position: fixed;
+      z-index: 50;
+      right: 10px;
+      bottom: 10px;
+      background-color: white;
+      width: 90%;
+      max-width: 400px;
+      visibility: hidden;
+      overflow: hidden;
+    }
+
+    .floating-nav ul {
+      font-size: 1.2em;
+      margin: 0;
+    }
+
+    .floating-nav ul li {
+      border-bottom: 1px solid #eff2f6;
+    }
+
+    .floating-nav ul li a {
+      padding: 20px;
+      text-decoration: none;
+      color: #357ebd;
+      display: block;
+    }
+
+    .floating-nav ul li a:hover {
+      color: #1f496e;
+    }
+
+    .floating-nav ul li i.fa {
+      margin-right: 10px;
+    }
+
+    .floating-nav ul li:last-child {
+      border-bottom: 0;
+    }
+
+    .floating-nav.is-visible {
+      -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+      -o-transform: scale(1);
+      transform: scale(1);
+      -webkit-transition: transform 0.3s, visibility 0s 0s;
+      -o-transition: transform 0.3s, visibility 0s 0s;
+      transition: transform 0.3s, visibility 0s 0s;
+      visibility: visible;
+    }
+
+    @media (max-width: 992px) {
+      .profile-card-wrapper {
+        position: relative;
       }
-    </script>
-    <div class="container-fluid">
-      <div class="row main clearfix">
-        <a href="#" class="js-floating-nav-trigger floating-nav-trigger">
-          <i class="fa fa-bars"></i>
-          <span class="close-icon">&times;</span>
-        </a>
-        <nav class="floating-nav js-floating-nav">
-          <ul class="list-unstyled">
+    }
 
-		     <li>
-              <a href="../">
-                <i class="fa fa-globe"></i>
-                English Version
-              </a>
-            </li>
-            <li>
-              <a href="#about">
-                <i class="fa fa-user"></i>
-                Sobre Félix
-              </a>
-            </li>
-            <li>
-              <a href="#work-experience">
-                <i class="fa fa-building"></i>
-                Experiencia profesional
-              </a>
-            </li>
-            <li>
-              <a href="#skills">
-                <i class="fa fa-code"></i>
-                Habilidades
-              </a>
-            </li>
-            <li>
-              <a href="#education">
-                <i class="fa fa-mortar-board"></i>
-                Educación
-              </a>
-            </li>
-              <li>
-                <a href="#awards">
-                  <i class="fa fa-trophy"></i>
-                  Reconocimientos
-                </a>
-              </li>
-              <li>
-                <a href="#volunteer-work">
-                  <i class="fa fa-child"></i>
-                  Voluntariado
-                </a>
-              </li>
-              <li>
-                <a href="#interests">
-                  <i class="fa fa-heart"></i>
-                  Intereses
-                </a>
-              </li>
-          </ul>
-        </nav>
+    .profile-pic {
+      padding: 20px 0;
+    }
 
-        <section class="col-md-3 card-wrapper profile-card-wrapper affix">
-          <div class="card profile-card">
-              <span class="profile-pic-container">
-                <div class="profile-pic">
-                  <img class="media-object img-circle center-block"  data-src="holder.js/100x100"
-                    alt="Félix Prado" src="../images/felixprado.jpg" itemprop="image">
-                </div>
+    @media (max-width: 992px) {
+      .profile-pic {
+        padding: 10px 0;
+      }
+    }
 
-                <div class="name-and-profession">
-                  <h3 class="text-center text-bolder name" itemprop="name"> Félix Prado</h3>
-                  <h5 class="text-muted text-center" itemprop="jobTitle"><b>Ingeniero de Software</b><br><br>Ingeniero de Telecomunicación<br>M.Sc. Computer Engineering</h5>
-                </div>
+    .profile-pic img {
+      width: 100px;
+      height: 100px;
+    }
+
+    @media (max-width: 992px) {
+      .name {
+        margin-top: 10px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .contact-details {
+        text-align: center;
+      }
+    }
+
+    .contact-details .detail {
+      display: table;
+      padding: 10px 0;
+    }
+
+    .contact-details .detail .icon {
+      padding: 0 10px;
+      color: #707070;
+    }
+
+    @media (max-width: 992px) {
+      .contact-details .detail .icon {
+        padding: 0 5px 0 0;
+      }
+    }
+
+    .contact-details .detail .info {
+      font-size: 0.8em;
+    }
+
+    .contact-details .detail .icon,
+    .contact-details .detail .info {
+      display: table-cell;
+      vertical-align: middle;
+    }
+
+    @media (max-width: 768px) {
+      .contact-details .detail {
+        position: relative;
+        float: left;
+        width: 100%;
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .contact-details .detail {
+        position: relative;
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding: 10px;
+      }
+
+      .contact-details .detail .icon,
+      .contact-details .detail .info {
+        display: inline-block;
+      }
+    }
+
+    @media (max-width: 992px) and (min-width: 768px) {
+      .contact-details .detail {
+        float: left;
+        width: 25%;
+      }
+    }
+
+    .social-links {
+      line-height: 2.5;
+    }
+
+    .social-link {
+      margin-left: 5px;
+      min-width: 35px;
+      display: inline-block;
+    }
+
+    .social-link:first-child {
+      margin-left: 0;
+    }
+
+    .social-link:hover {
+      text-decoration: none;
+    }
+
+    .link-github {
+      color: #454545;
+    }
+
+    .link-github:hover,
+    .link-github:focus {
+      text-decoration: none;
+      color: #2b2b2b;
+    }
+
+    .link-twitter {
+      color: #33ccff;
+    }
+
+    .link-twitter:hover,
+    .link-twitter:focus {
+      text-decoration: none;
+      color: #00bfff;
+    }
+
+    .link-blog {
+      color: #f36f24;
+    }
+
+    .link-blog:hover,
+    .link-blog:focus {
+      text-decoration: none;
+      color: #d8560c;
+    }
+
+    .link-linkedin {
+      color: #007bb6;
+    }
+
+    .link-linkedin:hover,
+    .link-linkedin:focus {
+      text-decoration: none;
+      color: #005983;
+    }
+
+    .link-skype {
+      color: #12a5f4;
+    }
+
+    .link-skype:hover,
+    .link-skype:focus {
+      text-decoration: none;
+      color: #0986ca;
+    }
+
+    .link-stackoverflow {
+      color: #8e8e92;
+    }
+
+    .link-stackoverflow:hover,
+    .link-stackoverflow:focus {
+      text-decoration: none;
+      color: #747479;
+    }
+
+    .link-soundcloud {
+      color: #e8822d;
+    }
+
+    .link-soundcloud:hover,
+    .link-soundcloud:focus {
+      text-decoration: none;
+      color: #cc6916;
+    }
+
+    .link-pinterest {
+      color: #bd091f;
+    }
+
+    .link-pinterest:hover,
+    .link-pinterest:focus {
+      text-decoration: none;
+      color: #8c0717;
+    }
+
+    .link-vimeo {
+      color: #17b3e8;
+    }
+
+    .link-vimeo:hover,
+    .link-vimeo:focus {
+      text-decoration: none;
+      color: #128fba;
+    }
+
+    .link-behance {
+      color: #2c98cf;
+    }
+
+    .link-behance:hover,
+    .link-behance:focus {
+      text-decoration: none;
+      color: #2379a5;
+    }
+
+    .link-codepen {
+      color: #1c1c1c;
+    }
+
+    .link-codepen:hover,
+    .link-codepen:focus {
+      text-decoration: none;
+      color: #020202;
+    }
+
+    .link-foursquare {
+      color: #fa4778;
+    }
+
+    .link-foursquare:hover,
+    .link-foursquare:focus {
+      text-decoration: none;
+      color: #f91554;
+    }
+
+    .link-reddit {
+      color: #545454;
+    }
+
+    .link-reddit:hover,
+    .link-reddit:focus {
+      text-decoration: none;
+      color: #3b3b3b;
+    }
+
+    .link-spotify {
+      color: #acd200;
+    }
+
+    .link-spotify:hover,
+    .link-spotify:focus {
+      text-decoration: none;
+      color: #829f00;
+    }
+
+    .link-dribbble {
+      color: #ce366f;
+    }
+
+    .link-dribbble:hover,
+    .link-dribbble:focus {
+      text-decoration: none;
+      color: #a82959;
+    }
+
+    .link-facebook {
+      color: #4b6daa;
+    }
+
+    .link-facebook:hover,
+    .link-facebook:focus {
+      text-decoration: none;
+      color: #3b5687;
+    }
+
+    .link-angellist {
+      color: #000000;
+    }
+
+    .link-angellist:hover,
+    .link-angellist:focus {
+      text-decoration: none;
+      color: #000000;
+    }
+
+    .link-bitbucket {
+      color: #205081;
+    }
+
+    .link-bitbucket:hover,
+    .link-bitbucket:focus {
+      text-decoration: none;
+      color: #163758;
+    }
+
+    .card-skills {
+      position: relative;
+    }
+
+    .skill-level {
+      border-radius: 3px;
+      position: absolute;
+      top: 10px;
+      bottom: 10px;
+      left: 0;
+      width: 10px;
+      box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.2);
+    }
+
+    .skill-level .skill-progress {
+      position: absolute;
+      border-radius: 3px;
+      bottom: 0;
+      width: 100%;
+      -webkit-transition: height 1s ease;
+    }
+
+    .skill-level .skill-progress.beginner {
+      height: 50%;
+      background: #e74c3c;
+    }
+
+    .skill-level .skill-progress.intermediate {
+      height: 70%;
+      background: #f1c40f;
+    }
+
+    .skill-level .skill-progress.advanced {
+      height: 80%;
+      background: #428bca;
+    }
+
+    .skill-level .skill-progress.master {
+      height: 95%;
+      background: #5cb85c;
+    }
+
+    .skill-info {
+      margin-left: 10px;
+    }
+
+    @media (max-width: 480px) {
+      .skill-info {
+        margin-left: 20px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .quote {
+        font-size: inherit;
+      }
+    }
+
+    @media print {
+      a[href]:after {
+        content: none !important;
+      }
+
+      .profile-card {
+        text-align: center;
+      }
+
+      .profile-pic {
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      .profile-pic img {
+        border-radius: 0;
+      }
+
+      .name-and-profession {
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 15px;
+      }
+
+      .contact-details .detail {
+        position: relative;
+        float: left;
+        width: 25%;
+        min-height: 1px;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding: 0;
+      }
+
+      .floating-nav,
+      .floating-nav-trigger {
+        display: none;
+      }
+
+      .pagebreak {
+        page-break-before: always;
+      }
+    }
+  </style>
+</head>
+
+<body itemscope itemtype="http://schema.org/Person">
+  <script>
+    window.onload = function () {
+      var toggleFloatingMenu = function () {
+        $('.js-floating-nav').toggleClass('is-visible');
+        $('.js-floating-nav-trigger').toggleClass('is-open');
+      };
+
+      $(".background-card").css("min-height", window.screen.availHeight + "px");
+      $(".js-tooltip").tooltip();
+      $('.js-floating-nav-trigger').on('click', function (e) {
+        e.preventDefault();
+        toggleFloatingMenu();
+      });
+      $('.js-floating-nav a').on('click', toggleFloatingMenu);
+    }
+  </script>
+  <div class="container-fluid">
+    <div class="row main clearfix">
+      <a href="#" class="js-floating-nav-trigger floating-nav-trigger">
+        <i class="fa fa-bars"></i>
+        <span class="close-icon">&times;</span>
+      </a>
+      <nav class="floating-nav js-floating-nav">
+        <ul class="list-unstyled">
+
+          <li>
+            <a href="../">
+              <i class="fa fa-globe"></i>
+              English Version
+            </a>
+          </li>
+          <li>
+            <a href="#about">
+              <i class="fa fa-user"></i>
+              Sobre Félix
+            </a>
+          </li>
+          <li>
+            <a href="#work-experience">
+              <i class="fa fa-building"></i>
+              Experiencia profesional
+            </a>
+          </li>
+          <li>
+            <a href="#skills">
+              <i class="fa fa-code"></i>
+              Habilidades
+            </a>
+          </li>
+          <li>
+            <a href="#education">
+              <i class="fa fa-mortar-board"></i>
+              Educación
+            </a>
+          </li>
+          <li>
+            <a href="#awards">
+              <i class="fa fa-trophy"></i>
+              Reconocimientos
+            </a>
+          </li>
+          <li>
+            <a href="#volunteer-work">
+              <i class="fa fa-child"></i>
+              Voluntariado
+            </a>
+          </li>
+          <li>
+            <a href="#interests">
+              <i class="fa fa-heart"></i>
+              Intereses
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <section class="col-md-3 card-wrapper profile-card-wrapper affix">
+        <div class="card profile-card">
+          <span class="profile-pic-container">
+            <div class="profile-pic">
+              <img class="media-object img-circle center-block" data-src="holder.js/100x100" alt="Félix Prado"
+                src="../images/felixprado.jpg" itemprop="image">
+            </div>
+
+            <div class="name-and-profession">
+              <h3 class="text-center text-bolder name" itemprop="name">Félix Prado</h3>
+              <h5 class="text-muted text-center" itemprop="jobTitle"><b>Trabajando con software y personas</b><br><br>Ingeniería de Telecomunicación<br>M.Sc. Computer Engineering</h5>
+            </div>
+          </span>
+          <hr>
+
+          <div class="contact-details clearfix">
+
+            <div class="detail">
+              <span class="icon">
+                <i class="fa fa-lg fa-location-arrow"></i>
               </span>
-              <hr>
+              <span class="info">
+                Andalucía, España
+              </span>
+            </div>
 
-              <div class="contact-details clearfix">
+            <div class="detail">
+              <span class="icon">
+                <i class="fa fa-lg fa-phone"></i>
+              </span>
 
-				<div class="detail">
-                    <span class="icon">
-                      <i class="fa fa-lg fa-location-arrow"></i>
-                    </span>
-                    <span class="info">
-                        Andalucía, España
-                      </span>
-                  </div>
+              <span class="info" itemprop="telephone">
+                +34 620 720 225
+              </span>
+            </div>
 
-                  <div class="detail">
-                    <span class="icon">
-                      <i class="fa fa-lg fa-phone"></i>
-                    </span>
+            <div class="detail">
+              <span class="icon">
+                <i class="fa fa-lg fa-envelope-o"></i>
+              </span>
 
-                    <span class="info" itemprop="telephone">
-                      +34 620 720 225
-                    </span>
-                  </div>
+              <span class="info">
+                <a href="mailto:mail@felixprado.com" class="link-disguise" itemprop="email">mail@felixprado.com</a>
+              </span>
+            </div>
 
-                  <div class="detail">
-                    <span class="icon">
-                      <i class="fa fa-lg fa-envelope-o"></i>
-                    </span>
+            <div class="detail">
+              <span class="icon" title="Languages I speak">
+                <i class="fa fa-lg fa-language"></i>
+              </span>
 
-                    <span class="info">
-                      <a href="mailto:mail@felixprado.com" class="link-disguise" itemprop="email">mail@felixprado.com</a>
-                    </span>
-                  </div>
+              <span class="info">
+                Inglés (C1), Italiano (B2), Francés (A2)
+              </span>
+            </div>
 
-                  <div class="detail">
-                    <span class="icon" title="Languages I speak">
-                      <i class="fa fa-lg fa-language"></i>
-                    </span>
+            <div class="detail">
+              <span class="icon" title="CV">
+                <i class="fa fa-file-pdf-o"></i>
+              </span>
 
-                    <span class="info">
-                      Inglés (C1), Italiano (B2), Francés (A2)
-                    </span>
-                  </div>
-
-				 <div class="detail">
-					<span class="icon" title="CV">
-                      <i class="fa fa-file-pdf-o"></i>
-                    </span>
-
-                    <span class="info">
-                      <a href="http://felixprado.com/files/FelixPrado_CV_en.pdf">Curriculum Vitae</a>
-                    </span>
-                  </div>
-              </div>
-
-
-              <hr>
-			<div class="social-links text-center">
-				<a class="fa fa-telegram fa-2x social-link link-telegram" href="https://t.me/fprado" target="_blank"></a>
-                <a class="fa fa-linkedin fa-2x social-link link-linkedin" href="http://www.linkedin.com/in/felixprado" target="_blank"></a>
-				<a class="fa fa-camera fa-2x social-link link-camera" href="https://photos.felixprado.com" target="_blank"></a>
-				<a class="fa fa-lightbulb-o fa-2x social-link link-lightbulb-o" href="http://ideas.felixprado.com" target="_blank"></a>
-				<a class="fa fa-quote-right fa-2x social-link link-quote-right" href="http://quotes.felixprado.com" target="_blank"></a>
+              <span class="info">
+                <a href="http://felixprado.com/files/FelixPrado_CV_en.pdf">Curriculum Vitae</a>
+              </span>
             </div>
           </div>
-        </section>
 
-        <section class="col-md-9 card-wrapper pull-right">
-          <div class="card background-card">
-<!--             <h4 class="text-uppercase text-bolder">Background</h4> -->
-<!--             <hr> -->
 
-            <div class="background-details">
-              <div class="detail" id="about">
-                <div class="icon">
-                  <i class="fa fa-lg fa-user"></i>
-                  <span class="mobile-title">Resumen</span>
-                </div>
-                <div class="info">
-                  <h4 class="title text-uppercase">
-                    Resumen
-                  </h4>
+          <hr>
 
-                  <div class="content" itemprop="description">
-                    <p>Félix es <b>Ingeniero de Telecomunicación</b> especializado en <b>Telemática</b> por la Universidad de Sevilla y obtuvo el <b>Master of Science in Computer Engineering</b> en el Politecnico di Milano,
-					en Italia, gracias a un acuerdo de Doble Titulación dentro del programa <a href="http://www.time-association.org/double-degrees/">T.I.M.E</a>.</p>
-					<p>Hasta ahora ha desarrollado su carrera profesional dentro del mundo del software en distintos campos (IoT, telecomunicaciones) y ámbitos (desarrollo, análisis, integración continua)
-					además de asumir tareas de gestión de equipos y mejora de metodologías de trabajo principalmente usando <i>agile</i>.</p>
-                  </div>
+          <div class="social-links text-center">
+            <a class="fa fa-skype fa-2x social-link link-skype" href="callto://felixpradogarcia" target="_blank"></a>
+            <a class="fa fa-linkedin fa-2x social-link link-linkedin" href="http://www.linkedin.com/in/felixprado"
+              target="_blank"></a>
+            <a class="fa fa-instagram fa-2x social-link link-instagram" href="https://www.instagram.com/fpr.g/"
+              target="_blank"></a>
+            <a class="fa fa-flickr fa-2x social-link link-flickr" href="https://www.flickr.com/photos/fprado/"
+              target="_blank"></a>
+            <a class="fa fa-tumblr fa-2x social-link link-tumblr" href="http://quotes.fprado.es/" target="_blank"></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="col-md-9 card-wrapper pull-right">
+        <div class="card background-card">
+          <!--             <h4 class="text-uppercase text-bolder">Background</h4> -->
+          <!--             <hr> -->
+
+          <div class="background-details">
+            <div class="detail" id="about">
+              <div class="icon">
+                <i class="fa fa-lg fa-user"></i>
+                <span class="mobile-title">Resumen</span>
+              </div>
+              <div class="info">
+                <h4 class="title text-uppercase">
+                  Resumen
+                </h4>
+
+                <div class="content" itemprop="description">
+                  <p>Félix es <b>Ingeniero de Telecomunicación</b> especializado en <b>Telemática</b> por la Universidad
+                    de Sevilla y obtuvo el <b>Master of Science in Computer Engineering</b> en el Politecnico di Milano,
+                    en Italia, gracias a un acuerdo de Doble Titulación dentro del programa <a
+                      href="http://www.time-association.org/double-degrees/">T.I.M.E</a>.</p>
+                  <p>Hasta ahora ha desarrollado su carrera profesional dentro del mundo del software en distintos
+                    campos (IoT, telecomunicaciones) y ámbitos (desarrollo, análisis, integración continua)
+                    además de asumir tareas de gestión de equipos y mejora de metodologías de trabajo principalmente
+                    usando <i>agile</i>.</p>
                 </div>
               </div>
+            </div>
 
-              <div class="detail" id="work-experience">
-                <div class="icon">
-                  <i class="fa fa-lg fa-building"></i>
-                  <span class="mobile-title">Experiencia profesional</span>
-                </div>
-                <div class="info">
-                  <h4 class="title text-uppercase">
-                    Experiencia profesional
-                  </h4>
+            <div class="detail" id="work-experience">
+              <div class="icon">
+                <i class="fa fa-lg fa-building"></i>
+                <span class="mobile-title">Experiencia profesional</span>
+              </div>
+              <div class="info">
+                <h4 class="title text-uppercase">
+                  Experiencia profesional
+                </h4>
+
+                <ul class="list-unstyled">
+                  <li class="card card-nested clearfix">
+                    <div class="content has-sidebar">
+                      <p class="clear-margin-sm">
+                        <strong>Software Engineer</strong>,&nbsp;Solera
+                      </p>
+                      </p>
+                      <p class="text-muted visible-xs visible-sm">
+                        <small>
+                          <span class="space-right">
+                            Jun 2021 - actualmente
+                          </span>
+                          <!--<span>
+           <i class="fa fa-clock-o icon-left"></i>
+           1 año 7 months
+         </span> -->
+                        </small>
+                      </p>
+                      <p>Trabajo en un arquitectura backend con más de una docena de microservicios que proporcionan
+                        información a varias herramientas de Solera y principalmente a las aplicaciones móviles de una
+                        conocida empresa de camiones. Las tareas principales de nuestro pequeño equipo (dos
+                        desarrolladores de backend) son el desarrollo de nueva funcionalidad, el mantenimiento y el
+                        arreglo de bugs y la mejora de la monitorización de los distintos servicios. Además, nos hemos
+                        encargado de la migración de estos servicios desde una nube PCF a una infraestructura de
+                        Kubernetes en VMware Tanzu, adaptando los pipelines y creando la configuración necesaria
+                        principalmente usando Concourse.
+                      </p>
+                      <ul>
+                        <li>Technologies: Java, SpringBoot, MySQL, MongoDB, Docker, Pivotal CloudFroundry, VMWare Tanzu,
+                          Kubernetes, Concourse, Proget, Git.</li>
+                      </ul><br>
+                      <p>Además de mi trabajo como ingeniero de software, durante estos meses he formado parte de un
+                        grupo interno de "Engagement" en el que un grupo pequeño de empleados estamos trabajando
+                        conjutamente con RRHH en cómo mejorar la satisfacción, el compromiso y el desarrollo de los
+                        empleados en la oficina de Sevilla. En un período corto de tiempo y en era pandémica, Solera ha
+                        creado en Sevilla una nueva oficina con más de 200 empleados y quedan aún muchos aspectos a
+                        mejorar con respecto a cultura corporativa y atención a los empleados. En nuestras reuniones
+                        semanales discutimos y trabajamos activamente en propuestas, iniciativas e ideas para mejorar el
+                        ambiente en la compañía y tener empleados mejores y más contentos.</p>
+                    </div>
+
+                    <div class="sidebar text-muted text-center hidden-xs hidden-sm">
+                      <p><strong>Desde:</strong>&nbsp;Jun 2021</p>
+                      <p>
+                    </div>
+                  </li>
 
                   <ul class="list-unstyled">
-				        <li class="card card-nested clearfix">
-                        <div class="content has-sidebar">
-                          <p class="clear-margin-sm">
-                            <strong>Software Engineer y Unit Lead</strong>,&nbsp;Novatec</p>
-                          <p class="text-muted visible-xs visible-sm">
-                            <small>
-                              <span class="space-right">Oct 2016 - actualmente</span>
-								<!--<span>
+                    <li class="card card-nested clearfix">
+                      <div class="content has-sidebar">
+                        <p class="clear-margin-sm">
+                          <strong>Software Engineer & Unit Lead</strong>,&nbsp;Novatec
+                        </p>
+                        <p class="text-muted visible-xs visible-sm">
+                          <small>
+                            <span class="space-right">Oct 2016 - May 2021</span>
+                            <!--<span>
                                   <i class="fa fa-clock-o icon-left"></i>
                                   1 año 7 months
                                 </span> -->
-                            </small>
-                          </p>
-                          <p> Desarrollo, testeo, análisis, despliegue, monitorización y mantenimiento de componentes y aplicaciones en una arquitectura de microservicios. Mi trabajo ha cubierto el ciclo de desarrollo al completo empezando por la toma de requisitos hasta la puesta en producción y monitorización trabajando con una metodología DevOps. Nuestra forma de trabajo se compone de equipos totalmente distribuidos entre Alemania y España trabajando con SCRUM y Kanban.</p>  
-                            <ul>
-                                <li>Tecnologías: Java, Kotlin, SpringBoot, DB2, PostgreSQL, Docker, Kubernetes, Jenkins, Nexus, Ansible, Groovy, Git y and AzureDevOps.</li>
-                            </ul><br>
-                            <p> Además de mi trabajo como Ingeniero de Software en el proyecto, en Novatec tengo el rol de Unit Lead cuya labor principal es ser interfaz entre la compañía y un grupo de empleados. Mis tareas principales son hacerles un seguimiento y aconsejarles y guiarles en su desarrollo profesional, gestionar el presupuesto de sus subidas salariales y sobre todo, estar cerca de ellos para resolver dudas, identificar sus propuestas, preocupaciones y necesidades y actuar para mejorar tanto su satisfacción personal y profesional como la propia compañía.</p>
-						</div>
+                          </small>
+                        </p>
+                        <p> Desarrollo, testeo, análisis, despliegue, monitorización y mantenimiento de componentes y
+                          aplicaciones en una arquitectura de microservicios. Mi trabajo ha cubierto el ciclo de
+                          desarrollo al completo empezando por la toma de requisitos hasta la puesta en producción y
+                          monitorización trabajando con una metodología DevOps. Nuestra forma de trabajo se compone de
+                          equipos totalmente distribuidos entre Alemania y España trabajando con SCRUM y Kanban.</p>
+                        <ul>
+                          <li>Tecnologías: Java, Kotlin, SpringBoot, DB2, PostgreSQL, Docker, Kubernetes, Jenkins,
+                            Nexus, Ansible, Groovy, Git y and AzureDevOps.</li>
+                        </ul><br>
+                        <p> Además de mi trabajo como Ingeniero de Software en el proyecto, en Novatec tengo el rol de
+                          Unit Lead cuya labor principal es ser interfaz entre la compañía y un grupo de empleados. Mis
+                          tareas principales son hacerles un seguimiento y aconsejarles y guiarles en su desarrollo
+                          profesional, gestionar el presupuesto de sus subidas salariales y sobre todo, estar cerca de
+                          ellos para resolver dudas, identificar sus propuestas, preocupaciones y necesidades y actuar
+                          para mejorar tanto su satisfacción personal y profesional como la propia compañía.</p>
+                      </div>
 
-                        <div class="sidebar text-muted text-center hidden-xs hidden-sm">
-                            <p><strong>Desde:</strong>&nbsp;Oct 2016</p>
-                            <p><strong>Hasta:</strong>&nbsp;actualmente</p>
-                            <p>
-                        </div>
-                      </li>
+                      <div class="sidebar text-muted text-center hidden-xs hidden-sm">
+                        <p><strong>Desde:</strong>&nbsp;Oct 2016</p>
+                        <p><strong>Hasta:</strong>&nbsp;May 2021</p>
+                        <p>
+                      </div>
+                    </li>
 
-                      <li class="card card-nested clearfix">
-                        <div class="content has-sidebar">
-                          <p class="clear-margin-sm">
-                            <strong>Software Developer y Scrum Master</strong>,&nbsp;
-                              Ericsson
-                          </p>
-                          <p class="text-muted visible-xs visible-sm">
-                            <small>
-								<span class="space-right">Jul 2013 - Sep 2016</span><
-								<span> <i class="fa fa-clock-o icon-left"></i>3 años y 2 meses</span>
-							</small>
-                          </p>
-                          <p>Desarrollo, análisis, testeo y depuración de software. Software de gestión y optimización automática de redes móviles mediante algoritmos SON (Self-Organizing Networks). Soporte multi-vendor: Ericsson, Nokia, Huawei y Alcatel-Lucent para redes GSM, UMTS y LTE. Metodología <i>Agile</i>: <a href="https://en.wikipedia.org/wiki/Scrum_%28software_development%29">SCRUM</a>. </p>
-                            <ul>
-                                <li> Scrum Master del equipo <i>Fractal</i>: gestión, redacción y división de tareas, fomentar la auto-organización del equipo, toma de decisiones, preparación y moderación de reuniones y ceremonias SCRUM (Sprint Planning, Stand up, Scrum of Scrums, Retrospectiva), interfaz con resto de equipos, Product Owner y Agile Manager </li>
-                            </ul>
-                        </div>
+                    <li class="card card-nested clearfix">
+                      <div class="content has-sidebar">
+                        <p class="clear-margin-sm">
+                          <strong>Software Developer y Scrum Master</strong>,&nbsp;
+                          Ericsson
+                        </p>
+                        <p class="text-muted visible-xs visible-sm">
+                          <small>
+                            <span class="space-right">Jul 2013 - Sep 2016</span>
+                            < <span> <i class="fa fa-clock-o icon-left"></i>3 años y 2 meses</span>
+                          </small>
+                        </p>
+                        <p>Desarrollo, análisis, testeo y depuración de software. Software de gestión y optimización
+                          automática de redes móviles mediante algoritmos SON (Self-Organizing Networks). Soporte
+                          multi-vendor: Ericsson, Nokia, Huawei y Alcatel-Lucent para redes GSM, UMTS y LTE. Metodología
+                          <i>Agile</i>: <a
+                            href="https://en.wikipedia.org/wiki/Scrum_%28software_development%29">SCRUM</a>.
+                        </p>
+                        <ul>
+                          <li> Scrum Master del equipo <i>Fractal</i>: gestión, redacción y división de tareas, fomentar
+                            la auto-organización del equipo, toma de decisiones, preparación y moderación de reuniones y
+                            ceremonias SCRUM (Sprint Planning, Stand up, Scrum of Scrums, Retrospectiva), interfaz con
+                            resto de equipos, Product Owner y Agile Manager </li>
+                        </ul>
+                      </div>
 
-                        <div class="sidebar text-muted text-center hidden-xs hidden-sm">
-                            <p><strong>Desde:</strong>&nbsp;Jul 2013</p>
-							<p><strong>Hasta:</strong>&nbsp;Sep 2016</p>
-                            <p>
-                        </div>
-                      </li>
+                      <div class="sidebar text-muted text-center hidden-xs hidden-sm">
+                        <p><strong>Desde:</strong>&nbsp;Jul 2013</p>
+                        <p><strong>Hasta:</strong>&nbsp;Sep 2016</p>
+                        <p>
+                      </div>
+                    </li>
 
-                      <li class="card card-nested clearfix">
-                        <div class="content has-sidebar">
-                          <p class="clear-margin-sm">
-                            <strong>Técnico de apoyo a la investigación</strong>,&nbsp;
-                              Universidad de Málaga
-                          </p>
-                          <p class="text-muted visible-xs visible-sm">
-                            <small>
-								<span class="space-right">Oct 2012 - Jul 2013</span>
-								<span> <i class="fa fa-clock-o icon-left"></i>9 meses</span>
-							</small>
-                          </p>
-                          <p>Proyecto RESCUE: investigación y desarrollo de software en dispositivos orientados al Internet de las cosas. Web Services (WS-*) y Arquitectura orientada a servicios (SOA). Orquestación y composición de servicios en distintos dispositivos: motas, RaspberryPi, .NET Gadgeteer</p>
-                            <ul>
-                                <li> Presentación “<a href="http://ws4d.e-technik.uni-rostock.de/wp-content/uploads/2012/10/Prado.pdf">Behaviour-Aware Compositions of Things using DPWS</a>” en el <a href="http://ws4d.e-technik.uni-rostock.de/workshop/workshop2012/">Workshop on (Embedded) Web Services</a> organizado por el grupo Web Services for Devices (WS4D). Rostock, Alemania. </li>
-                            </ul>
-                        </div>
+                    <li class="card card-nested clearfix">
+                      <div class="content has-sidebar">
+                        <p class="clear-margin-sm">
+                          <strong>Técnico de apoyo a la investigación</strong>,&nbsp;
+                          Universidad de Málaga
+                        </p>
+                        <p class="text-muted visible-xs visible-sm">
+                          <small>
+                            <span class="space-right">Oct 2012 - Jul 2013</span>
+                            <span> <i class="fa fa-clock-o icon-left"></i>9 meses</span>
+                          </small>
+                        </p>
+                        <p>Proyecto RESCUE: investigación y desarrollo de software en dispositivos orientados al
+                          Internet de las cosas. Web Services (WS-*) y Arquitectura orientada a servicios (SOA).
+                          Orquestación y composición de servicios en distintos dispositivos: motas, RaspberryPi, .NET
+                          Gadgeteer</p>
+                        <ul>
+                          <li> Presentación “<a
+                              href="http://ws4d.e-technik.uni-rostock.de/wp-content/uploads/2012/10/Prado.pdf">Behaviour-Aware
+                              Compositions of Things using DPWS</a>” en el <a
+                              href="http://ws4d.e-technik.uni-rostock.de/workshop/workshop2012/">Workshop on (Embedded)
+                              Web Services</a> organizado por el grupo Web Services for Devices (WS4D). Rostock,
+                            Alemania. </li>
+                        </ul>
+                      </div>
 
-                        <div class="sidebar text-muted text-center hidden-xs hidden-sm">
-                            <p><strong>Desde:</strong>&nbsp;Oct 2012</p>
-                            <p><strong>Hasta:</strong>&nbsp;Jul 2013</p>
+                      <div class="sidebar text-muted text-center hidden-xs hidden-sm">
+                        <p><strong>Desde:</strong>&nbsp;Oct 2012</p>
+                        <p><strong>Hasta:</strong>&nbsp;Jul 2013</p>
+                      </div>
+                    </li>
+                  </ul>
+              </div>
+            </div>
+
+            <div class="detail" id="skills">
+              <div class="icon">
+                <i class="fa fa-lg fa-code"></i>
+                <span class="mobile-title">Competencias</span>
+              </div>
+              <div class="info">
+                <h4 class="title text-uppercase">
+                  Competencias
+                </h4>
+
+                <div class="content">
+                  <ul class="list-unstyled">
+                    <li class="card card-nested card-skills">
+                      <div class="skill-level js-tooltip" title="Master" data-placement="left">
+                        <div class="skill-progress master">
                         </div>
-                      </li>
+                      </div>
+                      <div class="skill-info">
+                        <strong>Software</strong>
+                        <div class="space-top labels">
+                          <span class="label label-keyword">Java</span>
+                          <span class="label label-keyword">Kotlin</span>
+                          <span class="label label-keyword">Spring & SpringBoot</span>
+                          <span class="label label-keyword">PostgreSQL</span>
+                          <span class="label label-keyword">MySQL/SQL</span>
+                          <span class="label label-keyword">REST</span>
+                          <span class="label label-keyword">Git</span>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="card card-nested card-skills">
+                      <div class="skill-level js-tooltip" title="Master" data-placement="left">
+                        <div class="skill-progress master">
+                        </div>
+                      </div>
+                      <div class="skill-info">
+                        <strong>CI/CD & DevOps</strong>
+                        <div class="space-top labels">
+                          <span class="label label-keyword">Docker</span>
+                          <span class="label label-keyword">Kubernetes</span>
+                          <span class="label label-keyword">Helm</span>
+                          <span class="label label-keyword">Ansible</span>
+                          <span class="label label-keyword">Azure & AzureDevOps</span>
+                          <span class="label label-keyword">Concourse</span>
+                          <span class="label label-keyword">Jenkins</span>
+                          <span class="label label-keyword">Python</span>
+                          <span class="label label-keyword">Bash</span>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="card card-nested card-skills">
+                      <div class="skill-info">
+                        <strong>Personas</strong>
+                        <div class="space-top labels">
+                          <span class="label label-keyword">Servant leadership</span>
+                          <span class="label label-keyword">Management 3.0</span>
+                          <span class="label label-keyword">Desarrollo de carreras profesionales</span>
+                          <span class="label label-keyword">Company engagement</span>
+                          <span class="label label-keyword">Peopleware</span>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="card card-nested card-skills">
+                      <div class="skill-info">
+                        <strong>Leyendo y aprendiendo</strong>
+                        <div class="space-top labels">
+                          <span class="label label-keyword">Seguridad</span>
+                          <span class="label label-keyword">Patrones y antipatrones de diseño</span>
+                          <span class="label label-keyword">Liderazgo</span>
+                          <span class="label label-keyword">Cultura & personas</span>
+                        </div>
+                      </div>
+                    </li>
                   </ul>
                 </div>
               </div>
+            </div>
 
-              <div class="detail" id="skills">
-                <div class="icon">
-                  <i class="fa fa-lg fa-code"></i>
-                  <span class="mobile-title">Habilidades</span>
-                </div>
-                <div class="info">
-                  <h4 class="title text-uppercase">
-                    Competencias
-                  </h4>
+            <div class="detail" id="education">
+              <div class="icon">
+                <i class="fa fa-lg fa-mortar-board"></i>
+                <span class="mobile-title">Educación</span>
+              </div>
+              <div class="info">
+                <h4 class="title text-uppercase">
+                  Educación
+                </h4>
 
-                  <div class="content">
-                    <ul class="list-unstyled">
-                        <li class="card card-nested card-skills">
-                            <div class="skill-level js-tooltip" title="Master" data-placement="left">
-                              <div class="skill-progress master">
-                              </div>
-                            </div>
-                          <div class="skill-info">
-                            <strong>Software</strong>
-                            <div class="space-top labels">
-                                <span class="label label-keyword">Java</span>
-                                <span class="label label-keyword">Kotlin</span>
-                                <span class="label label-keyword">Spring & SpringBoot</span>
-								                <span class="label label-keyword">JUnit5, Mockito</span>
-                                <span class="label label-keyword">PostgreSQL</span>
-								                <span class="label label-keyword">MySQL/SQL</span>
-								                <span class="label label-keyword">REST</span>
-                                <span class="label label-keyword">Git</span>
-                            </div>
-                          </div>
-                        </li>
-						 <li class="card card-nested card-skills">
-						    <div class="skill-level js-tooltip" title="Master" data-placement="left">
-                              <div class="skill-progress master">
-                              </div>
-                            </div>
-                          <div class="skill-info">
-                            <strong>CI/CD</strong>
-                            <div class="space-top labels">
-                                <span class="label label-keyword">Docker</span>
-                                <span class="label label-keyword">Kubernetes</span>
-                                <span class="label label-keyword">Azure & AzureDevOps</span>
-                                <span class="label label-keyword">Jenkins</span>
-							                  <span class="label label-keyword">Python</span>
-                                <span class="label label-keyword">Bash</span>
-								                <span class="label label-keyword">Groovy</span>
-								                <span class="label label-keyword">Ansible</span>
-                            </div>
-                          </div>
-                        </li>
-						<li class="card card-nested card-skills">
-						    <div class="skill-level js-tooltip" title="Master" data-placement="left">
-                              <div class="skill-progress master">
-                              </div>
-                            </div>
-                          <div class="skill-info">
-                            <strong>Personas</strong>
-                            <div class="space-top labels">
-								                <span class="label label-keyword">Management 3.0</span>
-                                <span class="label label-keyword">Gestión de equipos y de personas</span>
-                                <span class="label label-keyword">Mentorización</span>
-                            </div>
-                          </div>
-                        </li>
-						<li class="card card-nested card-skills">
-                          <div class="skill-info">
-                            <strong>Internet de las cosas</strong>
-                            <div class="space-top labels">
-                                <span class="label label-keyword">CoAP</span>
-                                <span class="label label-keyword">DPWS</span>
-                                <span class="label label-keyword">6LowPan</span>
-                                <span class="label label-keyword">802.15.4</span>
-								                <span class="label label-keyword">REST</span>
-                            </div>
-                          </div>
-                        </li>
-                        <li class="card card-nested card-skills">
-                          <div class="skill-info">
-                            <strong>Aprendiendo</strong>
-                            <div class="space-top labels">
-                                <span class="label label-keyword">Functional Programming</span>
-                                <span class="label label-keyword">R</span>
-								<span class="label label-keyword">Tableau</span>
-                            </div>
-                          </div>
-                        </li>
-                    </ul>
-                  </div>
+                <div class="content">
+                  <ul class="list-unstyled">
+                    <li class="card card-nested">
+                      <div class="content has-sidebar">
+                        <p class="clear-margin-sm">
+                          <strong><a
+                              href="https://www4.ceda.polimi.it/manifesti/manifesti/controller/ManifestoPublic.do?evn_stampa=EVENTO&tipo=PDF&stampaSottoModuli=TRUE&aa=2010&k_cf=22&k_corso_la=434&ac_ins=0&k_indir=T2A&lang=EN&tipoCorso=ALL_TIPO_CORSO&caricaOffertaInvisibile=false&semestre=ALL_SEMESTRI&jaf_currentWFID=main">Master
+                              of Science in Computer Engineering</a></strong>,&nbsp;
+                          Politecnico di Mlano
+                        </p>
+                        <p class="visible-xs visible-sm text-muted">
+                          <small>Sep 2010 -Oct 2012</small>
+                        </p>
+                        <i></i>
+                        <div class="space-top labels">
+                          <span class="label label-keyword">Software Engineering</span>
+                          <span class="label label-keyword">Computer Security</span>
+                          <span class="label label-keyword">Semantic Web</span>
+                          <span class="label label-keyword">Artificial Intelligence</span>
+                          <span class="label label-keyword">Internet of Things</span>
+                          <span class="label label-keyword">Soft Computing</span>
+                          <span class="label label-keyword">Databases</span>
+                          <span class="label label-keyword">Formal Languages and Compilers</span>
+                          <span class="label label-keyword"></span>
+                        </div>
+                      </div>
+                      <div class="sidebar text-muted text-center hidden-xs hidden-sm">
+                        <p><strong>Desde:</strong>&nbsp;Sep 2010</p>
+                        <p><strong>Hasta:</strong>&nbsp;Oct 2012</p>
+                      </div>
+                    </li>
+
+                    <li class="card card-nested">
+                      <div class="content has-sidebar">
+                        <p class="clear-margin-sm">
+                          <strong>Ingeniería de Telecomunicación</strong>&nbsp(beca SICUE),&nbsp;
+                          Universidad Politécnica de Valencia
+                        </p>
+                        <p class="visible-xs visible-sm text-muted">
+                          <small>Sep 2009 - Oct 2010</small>
+                        </p>
+                        <i></i>
+                        <div class="space-top labels">
+                          <span class="label label-keyword">Antenas</span>
+                          <span class="label label-keyword">Comunicaciones ópticas</span>
+                          <span class="label label-keyword">Tratamiento Digital de la Señal</span>
+                          <span class="label label-keyword">Radiocomunicación</span>
+                          <span class="label label-keyword">Politíca de Telecomunicaciones</span>
+                          <span class="label label-keyword">Gestión de Redes</span>
+                          <span class="label label-keyword"></span>
+                        </div>
+                      </div>
+                      <div class="sidebar text-muted text-center hidden-xs hidden-sm">
+                        <p><strong>Desde:</strong>&nbsp;Sep 2009</p>
+                        <p><strong>Hasta:</strong>&nbsp;Jul 2010</p>
+                      </div>
+                    </li>
+
+                    <li class="card card-nested">
+                      <div class="content has-sidebar">
+                        <p class="clear-margin-sm">
+                          <strong><a href="http://www.us.es/estudios/titulaciones/plan_85_17">Ingeniería de
+                              Telecomunicación</a></strong>,&nbspEspecialidad en Telemática;
+                          Universidad de Sevilla
+                        </p>
+                        <p class="visible-xs visible-sm text-muted">
+                          <small>Sep 2005 - Jul 2009</small>
+                        </p>
+                        <i></i>
+                        <div class="space-top labels">
+                          <span class="label label-keyword">Arquitectura de Redes, Sistemas y Servicios</span>
+                          <span class="label label-keyword">Fundamentos de Telemática</span>
+                          <span class="label label-keyword">Laboratorio de Comunicación de Datos</span>
+                          <span class="label label-keyword">Software de Comunicaciones</span>
+                          <span class="label label-keyword"></span>
+                        </div>
+                      </div>
+                      <div class="sidebar text-muted text-center hidden-xs hidden-sm">
+                        <p>
+                          <strong>Desde:</strong>&nbsp;Sep 2005
+                        </p>
+                        <p><strong>Hasta:</strong>&nbsp;Jul 2009</p>
+                      </div>
+                    </li>
+
+                  </ul>
                 </div>
               </div>
+            </div>
 
-              <div class="detail" id="education">
-                <div class="icon">
-                  <i class="fa fa-lg fa-mortar-board"></i>
-                  <span class="mobile-title">Educación</span>
-                </div>
-                <div class="info">
-                  <h4 class="title text-uppercase">
-                    Educación
-                  </h4>
+            <div class="detail" id="awards">
+              <div class="icon">
+                <i class="fa fa-lg fa-trophy"></i>
+                <span class="mobile-title">Reconocimientos</span>
+              </div>
+              <div class="info">
+                <h4 class="title text-uppercase">
+                  Reconocimientos
+                </h4>
 
-                  <div class="content">
-                    <ul class="list-unstyled">
-						<li class="card card-nested">
-                          <div class="content has-sidebar">
-                            <p class="clear-margin-sm">
-                              <strong><a href="https://www4.ceda.polimi.it/manifesti/manifesti/controller/ManifestoPublic.do?evn_stampa=EVENTO&tipo=PDF&stampaSottoModuli=TRUE&aa=2010&k_cf=22&k_corso_la=434&ac_ins=0&k_indir=T2A&lang=EN&tipoCorso=ALL_TIPO_CORSO&caricaOffertaInvisibile=false&semestre=ALL_SEMESTRI&jaf_currentWFID=main">Master of Science in Computer Engineering</a></strong>,&nbsp;
-                              Politecnico di Mlano
-                            </p>
-                            <p class="visible-xs visible-sm text-muted">
-                              <small>Sep 2010 -Oct 2012</small>
-                            </p>
-                            <i></i>
-                            <div class="space-top labels">
-                                <span class="label label-keyword">Software Engineering</span>
-                                <span class="label label-keyword">Computer Security</span>
-                                <span class="label label-keyword">Semantic Web</span>
-                                <span class="label label-keyword">Artificial Intelligence</span>
-                                <span class="label label-keyword">Internet of Things</span>
-                                <span class="label label-keyword">Soft Computing</span>
-                                <span class="label label-keyword">Databases</span>
-                                <span class="label label-keyword">Formal Languages and Compilers</span>
-                                <span class="label label-keyword"></span>
-                            </div>
-                          </div>
-                          <div class="sidebar text-muted text-center hidden-xs hidden-sm">
-                            <p><strong>Desde:</strong>&nbsp;Sep 2010</p>
-                            <p><strong>Hasta:</strong>&nbsp;Oct 2012</p>
-                          </div>
-                        </li>
-
-						<li class="card card-nested">
-                          <div class="content has-sidebar">
-                            <p class="clear-margin-sm">
-                              <strong>Ingeniería de Telecomunicación</strong>&nbsp(beca SICUE),&nbsp;
-                              Universidad Politécnica de Valencia
-                            </p>
-                            <p class="visible-xs visible-sm text-muted">
-                              <small>Sep 2009 - Oct 2010</small>
-                            </p>
-                            <i></i>
-                            <div class="space-top labels">
-                                <span class="label label-keyword">Antenas</span>
-                                <span class="label label-keyword">Comunicaciones ópticas</span>
-                                <span class="label label-keyword">Tratamiento Digital de la Señal</span>
-                                <span class="label label-keyword">Radiocomunicación</span>
-                                <span class="label label-keyword">Politíca de Telecomunicaciones</span>
-                                <span class="label label-keyword">Gestión de Redes</span>
-                                <span class="label label-keyword"></span>
-                            </div>
-                          </div>
-                          <div class="sidebar text-muted text-center hidden-xs hidden-sm">
-                            <p><strong>Desde:</strong>&nbsp;Sep 2009</p>
-                            <p><strong>Hasta:</strong>&nbsp;Jul 2010</p>
-                          </div>
-                        </li>
-
-						<li class="card card-nested">
-                          <div class="content has-sidebar">
-                            <p class="clear-margin-sm">
-                              <strong><a href="http://www.us.es/estudios/titulaciones/plan_85_17">Ingeniería de Telecomunicación</a></strong>,&nbspEspecialidad en Telemática;
-                              Universidad de Sevilla
-                            </p>
-                            <p class="visible-xs visible-sm text-muted">
-                              <small>Sep 2005 - Jul 2009</small>
-                            </p>
-                            <i></i>
-                            <div class="space-top labels">
-								<span class="label label-keyword">Arquitectura de Redes, Sistemas y Servicios</span>
-                                <span class="label label-keyword">Fundamentos de Telemática</span>
-                                <span class="label label-keyword">Laboratorio de Comunicación de Datos</span>
-                                <span class="label label-keyword">Software de Comunicaciones</span>
-                                <span class="label label-keyword"></span>
-                            </div>
-                          </div>
-                          <div class="sidebar text-muted text-center hidden-xs hidden-sm">
-                            <p>
-                              <strong>Desde:</strong>&nbsp;Sep 2005</p>
-                            <p><strong>Hasta:</strong>&nbsp;Jul 2009</p>
-                          </div>
-                        </li>
-
-                    </ul>
-                  </div>
+                <div class="content">
+                  <ul class="list-unstyled">
+                    <li class="card card-nested">
+                      <div class="content has-sidebar">
+                        <p class="clear-margin-sm" itemprop="award">
+                          <strong>Expediente académico</strong>,&nbsp;
+                          Universidad de Sevilla
+                        </p>
+                        <p class="visible-xs visible-sm text-muted">
+                          <small>Fecha: Jun 2005</small>
+                        </p>
+                        <p class="clear-margin"> Reconocido entre los 100 mejores expedientes de ingreso a la
+                          Universidad (9.24) y calificaciones en la Prueba de Acceso (9.08) </p>
+                      </div>
+                      <div class="sidebar text-muted text-center hidden-xs hidden-sm">
+                        <p><strong>Fecha:</strong>&nbsp;Jun 2005</p>
+                      </div>
+                    </li>
+                  </ul>
                 </div>
               </div>
+            </div>
 
-                <div class="detail" id="awards">
-                  <div class="icon">
-                    <i class="fa fa-lg fa-trophy"></i>
-                    <span class="mobile-title">Reconocimientos</span>
-                  </div>
-                  <div class="info">
-                    <h4 class="title text-uppercase">
-                      Reconocimientos
-                    </h4>
+            <div class="detail" id="volunteer-work">
+              <div class="icon">
+                <i class="fa fa-lg fa-child"></i>
+                <span class="mobile-title">Voluntariado</span>
+              </div>
+              <div class="info">
+                <h4 class="title text-uppercase">
+                  Voluntariado
+                </h4>
 
-                    <div class="content">
-                      <ul class="list-unstyled">
-                          <li class="card card-nested">
-                            <div class="content has-sidebar">
-                              <p class="clear-margin-sm" itemprop="award">
-                                <strong>Expediente académico</strong>,&nbsp;
-                                Universidad de Sevilla
-                              </p>
-                              <p class="visible-xs visible-sm text-muted">
-                                <small>Fecha: Jun 2005</small>
-                              </p>
-                              <p class="clear-margin"> Reconocido entre los 100 mejores expedientes de ingreso a la Universidad (9.24) y calificaciones en la Prueba de Acceso (9.08). </p>
-                            </div>
-                            <div class="sidebar text-muted text-center hidden-xs hidden-sm">
-                              <p><strong>Fecha:</strong>&nbsp;Jun 2005</p>
-                            </div>
-                          </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="detail" id="volunteer-work">
-                  <div class="icon">
-                    <i class="fa fa-lg fa-child"></i>
-                    <span class="mobile-title">Voluntariado</span>
-                  </div>
-                  <div class="info">
-                    <h4 class="title text-uppercase">
-                      Voluntariado
-                    </h4>
-
-                    <div class="content">
-                      <ul class="list-unstyled">
-                          <li class="card card-nested">
-                            <div class="content has-sidebar">
-                              <p class="clear-margin-sm">
-                                <strong>Voluntario</strong>,&nbsp;
-                                  <a href="https://www.andaluciacompromisodigital.org/"  target="_blank">Andalucía Compromiso Digital</a>
-                              </p>
-                              <p class="visible-xs visible-sm text-muted">
-                                <small>Ene 2015 - Actualmente</small>
-                              </p>
-                              <p>Enseñanza de nuevas tecnologías a grupos de personas con un nivel reducido de conocimientos digitales. Sesiones de aprendizaje de uso de internet, seguridad, paquete Office, sistemas operativos.</p>
-                              <ul>
-                              </ul>
-                            </div>
-                            <div class="sidebar hidden-xs hidden-sm text-muted text-center">
+                <div class="content">
+                  <ul class="list-unstyled">
+                    <li class="card card-nested">
+                      <div class="content has-sidebar">
+                        <p class="clear-margin-sm">
+                          <strong>Voluntario</strong>,&nbsp;
+                          <a href="https://www.andaluciacompromisodigital.org/" target="_blank">Andalucía Compromiso
+                            Digital</a>
+                        </p>
+                        <!--p class="visible-xs visible-sm text-muted">
+                          <small>Ene 2015 - Actualmente</small>
+                          </p>-->
+                        <p>Enseñanza de nuevas tecnologías a grupos de personas con un nivel reducido de conocimientos
+                          digitales. Sesiones de aprendizaje de uso de internet, seguridad, paquete Office, sistemas
+                          operativos.</p>
+                        <ul>
+                        </ul>
+                      </div>
+                      <!--div class="sidebar hidden-xs hidden-sm text-muted text-center">
                               <p><strong>Desde:</strong>&nbsp;Ene 2015</p>
                               <p><strong>Hasta:</strong>&nbsp;Actualmente</p>
-                            </div>
-                          </li>
-                      </ul>
-                    </div>
-                  </div>
+                            </div>-->
+                    </li>
+                  </ul>
                 </div>
-
-
-                <div class="detail" id="interests">
-                  <div class="icon">
-                    <i class="fa fa-lg fa-heart"></i>
-                    <span class="mobile-title">Intereses</span>
-                  </div>
-                  <div class="info">
-                    <h4 class="title text-uppercase">
-                      Intereses
-                    </h4>
-
-                    <div class="content">
-                      <ul class="list-unstyled">
-                          <li class="card card-nested">
-                            <p>
-                              <strong>Deporte</strong>
-                            </p>
-
-                            <div class="space-top labels">
-								<span class="label label-keyword">Correr</span>
-                                <span class="label label-keyword">Senderismo</span>
-								<span class="label label-keyword">Bici</span>
-								<span class="label label-keyword">Balonmano</span>
-                                <span class="label label-keyword">Enseñanza de base</span>
-                            </div>
-                          </li>
-                          <li class="card card-nested">
-                            <p>
-                              <strong><a href="https://es.wikipedia.org/wiki/Educaci%C3%B3n_STEM">Educación STEM</a></strong>
-                            </p>
-
-                            <div class="space-top labels">
-                              <span class="label label-keyword">Matemáticas</span>
-                              <span class="label label-keyword">Programación</span>
-                            </div>
-                          </li>
-                          <li class="card card-nested">
-                            <p>
-                              <strong>Tecnología</strong>
-                            </p>
-
-                            <div class="space-top labels">
-                                <span class="label label-keyword">Internet</span>
-                                <span class="label label-keyword">Web 2.0</span>
-                                <span class="label label-keyword">Gadgets</span>
-                            </div>
-                          </li>
-                          <li class="card card-nested">
-                            <p>
-                              <strong>Fotografía</strong>
-                            </p>
-
-                            <div class="space-top labels">
-                            </div>
-                          </li>
-                          <li class="card card-nested">
-                            <p>
-                              <strong>Cultura</strong>
-                            </p>
-                            <div class="space-top labels">
-                            </div>
-                          </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-
-
+              </div>
             </div>
+
+
+            <div class="detail" id="interests">
+              <div class="icon">
+                <i class="fa fa-lg fa-heart"></i>
+                <span class="mobile-title">Intereses</span>
+              </div>
+              <div class="info">
+                <h4 class="title text-uppercase">
+                  Intereses
+                </h4>
+
+                <div class="content">
+                  <ul class="list-unstyled">
+                    <li class="card card-nested">
+                      <p>
+                        <strong>Deportes</strong>
+                      </p>
+                      <div class="space-top labels">
+                        <span class="label label-keyword">Correr</span>
+                        <span class="label label-keyword">Balonmano</span>
+                        <span class="label label-keyword">Senderismo</span>
+                      </div>
+                    </li>
+                    <li class="card card-nested">
+                      <p>
+                        <strong><a
+                            href="https://en.wikipedia.org/wiki/Science,_technology,_engineering,_and_mathematics">Educación
+                            STEM</a></strong>
+                      </p>
+                      <div class="space-top labels">
+                        <span class="label label-keyword">Matemáticas</span>
+                        <span class="label label-keyword">Programación</span>
+                      </div>
+                    </li>
+                    <li class="card card-nested">
+                      <p>
+                        <strong>Technología</strong>
+                      </p>
+                      <div class="space-top labels">
+                        <span class="label label-keyword">Internet</span>
+                        <span class="label label-keyword">Web 2.0</span>
+                        <span class="label label-keyword">Gadgets</span>
+                      </div>
+                    </li>
+                    <li class="card card-nested">
+                      <p>
+                        <strong>Fotografía</strong>
+                      </p>
+
+                      <div class="space-top labels">
+                      </div>
+                    </li>
+                    <li class="card card-nested">
+                      <p>
+                        <strong>Cultura</strong>
+                      </p>
+
+                      <div class="space-top labels">
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
     </div>
+  </div>
 
-    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/tooltip.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/tooltip.js"></script>
 
-<!-- Default Statcounter code for felixprado.com
+  <!-- Default Statcounter code for felixprado.com
 http://felixprado.com -->
-<script type="text/javascript">
-var sc_project=12451629; 
-var sc_invisible=1; 
-var sc_security="1b63ed6b"; 
-</script>
-<script type="text/javascript"
-src="https://www.statcounter.com/counter/counter.js"
-async></script>
-<noscript><div class="statcounter"><a title="Web Analytics"
-href="https://statcounter.com/" target="_blank"><img
-class="statcounter"
-src="https://c.statcounter.com/12451629/0/1b63ed6b/1/"
-alt="Web Analytics"></a></div></noscript>
-<!-- End of Statcounter Code -->
-  </body>
+  <script type="text/javascript">
+    var sc_project = 12451629;
+    var sc_invisible = 1;
+    var sc_security = "1b63ed6b"; 
+  </script>
+  <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script>
+  <noscript>
+    <div class="statcounter"><a title="Web Analytics" href="https://statcounter.com/" target="_blank"><img
+          class="statcounter" src="https://c.statcounter.com/12451629/0/1b63ed6b/1/" alt="Web Analytics"></a></div>
+  </noscript>
+  <!-- End of Statcounter Code -->
+</body>
+
 </html>
